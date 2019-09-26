@@ -1,107 +1,275 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Home Page</title>
-
-  <!-- Latest compiled and minified CSS -->
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <meta charset="UTF-8">
+    <title>Survey Page</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 
 </head>
 <body>
 
-  <div class="container">
-
-    <div class="jumbotron">
-      <h1 class="text-center"><span class="fa fa-fire"></span> Friend Finder</h1>
-      <hr>
-      <h2 class="text-center">If you can't make friends... maybe I can be of assistance.</h2>
-      <br>
-
-      <div class="text-center">
-        <a href="/survey"><button class="btn btn-lg btn-primary"><span class="fa fa-list-alt"></span> Take our Survey</button></a>
-      </div>
-    </div>
-
-    <div class="row">
-      <div class="col-lg-12">
-        <!-- Reservation Page -->
-        <div class="card">
-          <div class="card-header">
-            Friends Survey
-          </div>
-          <div class="card-body">
-            <form role="form">
-              <div class="form-group">
-                <label for="reserve-firstname">First Name</label>
-                <input type="text" class="form-control" id="reserve-name">
-              </div>
-              <div class="form-group">
-                <label for="reserve-lastname">Last Name</label>
-                <input type="text" class="form-control" id="reserve-phone">
-              </div>
-              <div class="form-group">
-                <label for="reserve-personalimg">Personal Picture</label>
-                <input type="text" class="form-control" id="reserve-email">
-              </div>
-              <div class="form-group">
-                <label for="reserve-question_one">Question One: </label>
-                <input type="range" min="1" max="5" value="3" class="slider" id="reserve-question_one">
-              </div>
-              <button type="submit" class="btn btn-primary submit">Submit</button>
-            </form>
-          </div>
+    <div class="container">
+        <div class="jumbotron">
+            <h1 class="text-center"><span class="fa fa-fire"></span> Friend Finder</h1>
+            <hr>
+            <h2 class="text-center">If you can't make friends... maybe I can be of assistance.</h2>
+            <br>
         </div>
-      </div>
+
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="card">
+                    <div class="card-header">
+                        Friends Survey - Select from the avaiable options; choosing the one that most accurately describes your response.
+                    </div>
+                    <div class="card-body">
+                        <form role="form">
+                            <div class="form-group">
+                                <label for="friend-firstname">First Name: </label>
+                                <input type="text" class="form-control" id="friend-firstname">
+                            </div>
+                            <div class="form-group">
+                                <label for="friend-lastname">Last Name: </label>
+                                <input type="text" class="form-control" id="friend-lastname">
+                            </div>
+                            <div class="form-group">
+                                <label for="friend-Q1">Choose your Favorite Fruit: </label>
+                                <input class="form-control" list="fruits" id="friend-Q1"/>
+                                <datalist id="fruits">
+                                    <option value="1.) Apple">
+                                    <option value="2.) Orange">
+                                    <option value="3.) Banana">
+                                    <option value="4.) Peach">
+                                    <option value="5.) Pineapple">
+                                </datalist>
+                            </div>
+                            <div class="form-group">
+                                <label for="friend-Q2">On a Summer day, what is your preffered outdoor temperature; select the closest value: </label>
+                                <input class="form-control" list="temperature" id="friend-Q2"/>
+                                <datalist id="temperature">
+                                    <option value="1.) 75">
+                                    <option value="2.) 80">
+                                    <option value="3.) 85">
+                                    <option value="4.) 90">
+                                    <option value="5.) 95">
+                                </datalist>
+                            </div>
+                            <div class="form-group">
+                                <label for="friend-Q3">Favorite Sneaker Brand: </label>
+                                <input class="form-control" list="sneakerbrands" id="friend-Q3"/>
+                                <datalist id="sneakerbrands">
+                                    <option value="1.) New Balance">
+                                    <option value="2.) Saucony">
+                                    <option value="3.) Puma">
+                                    <option value="4.) Adidas">
+                                    <option value="5.) Nike">
+                                </datalist>
+                            </div>
+                            <div class="form-group">
+                                <label for="friend-Q4">Ideal Personal Pet: </label>
+                                <input class="form-control" list="pets" id="friend-Q4"/>
+                                <datalist id="pets">
+                                    <option value="1.) None ---- I hate Pets">
+                                    <option value="2.) Cat">
+                                    <option value="3.) Dog">
+                                    <option value="4.) Bird">
+                                    <option value="5.) Rat \ Mouse">
+                                </datalist>
+                            </div>
+                            <div class="form-group">
+                                <label for="friend-Q5">Favorite Die Hard Movie: </label>
+                                <input class="form-control" list="ActionMovies" id="friend-Q5"/>
+                                <datalist id="ActionMovies">
+                                    <option value="1.) Die Hard">
+                                    <option value="2.) Die Hard 2">
+                                    <option value="3.) Die Hard with a Vengence">
+                                    <option value="4.) Live Free or Die Hard">
+                                    <option value="5.) A Good Day to Die Hard">
+                                </datalist>
+                            </div>
+                            <div class="form-group">
+                                <label for="friend-Q6">Favorite Part of Full Stack Web Development</label>
+                                <input class="form-control" list="code" id="friend-Q6"/>
+                                <datalist id="code">
+                                    <option value="1.) Full Stack Web What?!?!?">
+                                    <option value="2.) Javascript">
+                                    <option value="3.) HTML \ CSS">
+                                    <option value="4.) mySQL">
+                                    <option value="5.) Express \ Handlebars">
+                                </datalist>
+                            </div>
+                            <div class="form-group">
+                                <label for="friend-Q7">When I get older, I want to make sure I do this one thing ___________________</label>
+                                <input class="form-control" list="MadLib1" id="friend-Q7"/>
+                                <datalist id="MadLib1">
+                                    <option value="1.) Sky Dive">
+                                    <option value="2.) Ride a Motorcycle">
+                                    <option value="3.) Travel to a Foreign Country">
+                                    <option value="4.) Move to a Foreign Country">
+                                    <option value="5.) Run with the Bulls">
+                                </datalist>
+                            </div>
+                            <div class="form-group">
+                                <label for="friend-Q8">Favorite Retired SNL Actor: </label>
+                                <input class="form-control" list="SNLActor" id="friend-Q8"/>
+                                <datalist id="SNLActor">
+                                    <option value="1.) Eddie Murphy">
+                                    <option value="2.) Adam Sandler">
+                                    <option value="3.) John Belushi">
+                                    <option value="4.) Steve Martin">
+                                    <option value="5.) Chris Farley">
+                                </datalist>
+                            </div>
+                            <div class="form-group">
+                                <label for="friend-Q9">Favorite American Sport</label>
+                                <input class="form-control" list="FavSport" id="friend-Q9"/>
+                                <datalist id="FavSport">
+                                    <option value="1.) I do not Like Sports">
+                                    <option value="2.) FootBall">
+                                    <option value="3.) Baseball">
+                                    <option value="4.) Basketball">
+                                    <option value="5.) Soccer">
+                                </datalist>
+                            </div>
+                            <div class="form-group">
+                                <label for="friend-Q10">Favorite Classic 80's Movie </label>
+                                <input class="form-control" list="ClassicMovie" id="friend-Q10"/>
+                                <datalist id="ClassicMovie">
+                                    <option value="1.) The Breakfast Club">
+                                    <option value="2.) Ferris Bueller's Day Off">
+                                    <option value="3.) Goonies">
+                                    <option value="4.) Back to the Future">
+                                    <option value="5.) Top Gun">
+                                </datalist>
+                            </div>
+                            <button type="submit" class="btn btn-primary submit" id="submitBTN">Submit</button>
+                        </form>
+                    </div>
+                    <div class="modal" id="friendResult" tabindex="-1" role="dialog">
+                        <div class="modal-dialog" role="document">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title">Possible Friend...</h5>
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                        <span aria-hidden="true">&times;</span>
+                                    </button>
+                                </div>
+                                <div class="modal-body">
+                                <p><span id="firstName"></span> <span id="lastName"></span> is your closest match.</p>
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-secondary" id="homepage">Homepage</button>
+                                    <button type="button" class="btn btn-secondary" data-dismiss="modal" id="retakesurvey">Survey Again!</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal" id="messageBox" tabindex="-1" role="dialog">
+                        <div class="modal-dialog" role="document">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title" id="messageTitle"></h5>
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                        <span aria-hidden="true">&times;</span>
+                                    </button>
+                                </div>
+                                <div class="modal-body">
+                                <p><span id="messageBody"></span></p>
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 
 
     <footer class="footer">
         <div class="container">
-          <p><a href="/api/friends">API Friends Link</a>
+            <p><a href="/api/friends">API Friends Link</a>
         </div>
     </footer>
-
-  </div>
-
 </body>
 
 </html>
 
 
 <script type="text/javascript">
-  $(".submit").on("click", function(event) {
+document.getElementById("homepage").addEventListener("click", function(event){
+    window.location.replace("/")
+});
+
+document.getElementById("submitBTN").addEventListener("click", function(event){
     event.preventDefault();
-    var newReservation = {
-      customerName: $("#reserve-name").val().trim(),
-      phoneNumber: $("#reserve-phone").val().trim(),
-      customerEmail: $("#reserve-email").val().trim(),
-      customerID: $("#reserve-unique-id").val().trim()
-    };
+    var personalData = {
+        firstName: $("#friend-firstname").val().trim(),
+        lastName: $("#friend-lastname").val().trim(),
+        scores: [$("#friend-Q1").val()[0],
+                    $("#friend-Q2").val()[0],
+                    $("#friend-Q3").val()[0],
+                    $("#friend-Q4").val()[0],
+                    $("#friend-Q5").val()[0],
+                    $("#friend-Q6").val()[0],
+                    $("#friend-Q7").val()[0],
+                    $("#friend-Q8").val()[0],
+                    $("#friend-Q9").val()[0],
+                    $("#friend-Q10").val()[0]
+                ]
+        };
 
-    console.log(newReservation);
-    $.post("/api/tables", newReservation,
-      function(data) {
-
-        // If a table is available... tell user they are booked.
-        if (data) {
-          alert("Yay! You are officially booked!");
+        //
+        var validScores = true;
+        personalData.scores.forEach(function(element){
+            if(inRange(element,1,5)){
+                return true;
+            } else {
+                validScores = false;
+            }
+        });
+            
+        if(validScores){
+            $.post("/api/friends", personalData, function(result) {
+                if(result){
+                    $("#firstName").text(result.firstName);
+                    $("#lastName").text(result.lastName);
+                    $("#friendResult").modal('toggle')
+                    $("#friend-firstname").val("")
+                    $("#friend-lastname").val("")
+                    $("#friend-personalimg").val("")
+                    $("#friend-Q1").val("")
+                    $("#friend-Q2").val("")
+                    $("#friend-Q3").val("")
+                    $("#friend-Q4").val("")
+                    $("#friend-Q5").val("")
+                    $("#friend-Q6").val("")
+                    $("#friend-Q7").val("")
+                    $("#friend-Q8").val("")
+                    $("#friend-Q9").val("")
+                    $("#friend-Q10").val("")
+                } else {
+                    $("#messageTitle").text("Error Message")
+                    $("#messageBody").text("Error Finding you a Friend; Please try again")
+                    $("#messageBox").modal('toggle')
+                }
+            });
+        } else {
+            $("#messageTitle").text("Error Message")
+            $("#messageBody").text("All Survey Fields must be answered using avaialble Options")
+            $("#messageBox").modal('toggle')
         }
+});
 
-        // If a table is available... tell user they on the waiting list.
-        else {
-          alert("Sorry you are on the wait list");
-        }
+function inRange(x, min, max) {
+    return ((x-min)*(x-max) <= 0);
+}
 
-        // Clear the form when submitting
-        $("#reserve-name").val("");
-        $("#reserve-phone").val("");
-        $("#reserve-email").val("");
-        $("#reserve-unique-id").val("");
-
-      });
-
-  });
 
 </script>

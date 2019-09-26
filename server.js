@@ -12,6 +12,7 @@ var app = express();
 // Sets up the Express app to handle data parsing
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
+app.use(express.static("public"));
 
 // Loads Routes from External Files to Keep this Clean
 require("./app/routing/apiRoutes")(app);
